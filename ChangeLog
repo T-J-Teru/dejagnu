@@ -1,3 +1,8 @@
+2015-09-15  Andrew Burgess  <andrew.burgess@embecosm.com>
+
+	* lib/target.exp (prune_warnings): Remove clang warning about
+	unused debug option.
+
 2015-09-10  Robert Suchanek  <Robert.Suchanek@imgtec.com>
 
 	* baseboards/multi-sim.exp (rpath_flags): Add libgomp.so check.

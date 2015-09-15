@@ -286,6 +286,9 @@ proc prune_warnings { text } {
     # Ignore linker warning when searching 64bit libraries in /lib.
     regsub -all "(^|\n)\[^\n\]*: skipping incompatible \[^\n\]* when searching for \[^\n\]*" $text "" text
 
+    # Ignore clang warnings about unused options relating to debug information.
+    regsub -all "(^|\n)clang-\[^\n\]*: warning: argument unused during compilation: '-g\[^\n\]*'" $text "" text
+
     # It might be tempting to get carried away and delete blank lines, etc.
     # Just delete *exactly* what we're ask to, and that's it.
     return $text
